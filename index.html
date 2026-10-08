@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Jeu concours Le Lieu Rue de Metz · 100&nbsp;€ de bon d'achat à gagner</title>
-<meta name="description" content="Tentez de gagner un bon d'achat de 100&nbsp;€ à dépenser à la boutique Le Lieu, rue de Metz à Toulouse.">
+<title>Jeu concours Le Lieu · 100&nbsp;€ de bon d'achat à gagner</title>
+<meta name="description" content="Tentez de gagner un bon d'achat de 100&nbsp;€ valable chez Le Lieu, rue de Metz ou rue de la Pomme à Toulouse.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
@@ -136,6 +136,14 @@
   .organizer .role strong { color: var(--ink); font-weight: 800; letter-spacing: 0.02em; }
   .official-link { display: inline-block; margin-top: 6px; font-size: 13px; font-weight: 600; color: var(--cobalt); text-decoration: none; }
   .official-link:hover { text-decoration: underline; }
+  .shops-field { border: 0; padding: 0; margin: 0 0 18px; min-width: 0; }
+  .shops { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .shop { position: relative; }
+  .shop input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+  .shop span { display: block; padding: 14px; min-height: 64px; background: #F8F9FB; border: 1.5px solid var(--line); border-radius: 12px; font-weight: 600; line-height: 1.25; }
+  .shop span small { display: block; font-weight: 400; color: var(--ink-soft); font-size: 14px; }
+  .shop input:checked + span { border-color: var(--cobalt); box-shadow: inset 0 0 0 1.5px var(--cobalt); background: #EEF0FF; }
+  .shop input:focus-visible + span { outline: 3px solid var(--cobalt); outline-offset: 2px; }
   .panel { background: #EEF0FF; border-radius: 18px; padding: 16px 16px 14px; }
   .panel select { border-color: #B9C1FF; background-color: var(--card); }
   .fineprint { text-align: center; font-size: 13px; color: var(--ink-soft); margin: 12px 0 0; }
@@ -217,17 +225,17 @@
 
   <section class="hero" aria-labelledby="titre">
     <h1 id="titre">Tentez de gagner 100&nbsp;€ à dépenser chez Le Lieu</h1>
-    <p class="lead">Jeu organisé par <strong>Elio Faure, conseiller AXA</strong>, avec la boutique Le Lieu.</p>
+    <p class="lead">Jeu organisé par <strong>Elio Faure, conseiller AXA</strong>, avec les boutiques Le Lieu.</p>
     <a class="cta" href="#participer">Je participe</a>
 
-    <div class="ticket" role="img" aria-label="Un bon d'achat de 100 euros à gagner à la boutique Le Lieu, rue de Metz">
+    <div class="ticket" role="img" aria-label="Un bon d'achat de 100 euros à gagner, valable dans les deux boutiques Le Lieu : rue de Metz ou rue de la Pomme">
       <div class="ticket-top">
         <p class="ticket-kicker">Bon d'achat</p>
         <p class="ticket-amount">100&nbsp;€</p>
-        <p class="ticket-note">à dépenser dans la boutique Le Lieu, rue de Metz, à Toulouse.</p>
+        <p class="ticket-note">à dépenser dans la boutique Le Lieu de votre choix, à Toulouse.</p>
       </div>
       <div class="ticket-bottom">
-        <p class="stub"><strong>Rue de Metz</strong>Boutique participante</p>
+        <p class="stub"><strong>2 boutiques</strong>Rue de Metz ou rue de la Pomme</p>
         <p class="stub"><strong>1 gagnant</strong>Tiré au sort</p>
       </div>
     </div>
@@ -283,6 +291,21 @@
         <span class="err" id="e-profession"></span>
       </div>
 
+      <fieldset class="shops-field" aria-describedby="e-boutique">
+        <legend class="lbl">Dans quelle boutique avez-vous découvert le jeu ?</legend>
+        <div class="shops">
+          <label class="shop">
+            <input type="radio" name="boutique" value="Rue de Metz" data-key="metz">
+            <span>Rue de Metz<small>Toulouse</small></span>
+          </label>
+          <label class="shop">
+            <input type="radio" name="boutique" value="Rue de la Pomme" data-key="pomme">
+            <span>Rue de la Pomme<small>Toulouse</small></span>
+          </label>
+        </div>
+        <span class="err" id="e-boutique"></span>
+      </fieldset>
+
       <div class="field panel">
         <label class="lbl" for="interet">Un point sur votre patrimoine ?</label>
         <select id="interet" name="interet_bilan" aria-describedby="h-interet e-interet">
@@ -334,11 +357,11 @@
   <section aria-label="Règlement et informations">
     <details id="reglement">
       <summary>Règlement du jeu</summary>
-      <p><strong>Article 1. Organisation.</strong> Ce jeu gratuit et sans obligation d'achat est organisé par <span class="js-org"></span> (<a href="https://agence.axa.fr/distributeur/0066698575" target="_blank" rel="noopener">fiche officielle AXA</a>), en partenariat avec la boutique Le Lieu, rue de Metz, à Toulouse.</p>
+      <p><strong>Article 1. Organisation.</strong> Ce jeu gratuit et sans obligation d'achat est organisé par <span class="js-org"></span> (<a href="https://agence.axa.fr/distributeur/0066698575" target="_blank" rel="noopener">fiche officielle AXA</a>), en partenariat avec les boutiques Le Lieu de la rue de Metz et de la rue de la Pomme, à Toulouse.</p>
       <p><strong>Article 2. Participation.</strong> Le jeu est ouvert aux personnes majeures résidant en France métropolitaine. Une seule participation par personne.</p>
-      <p><strong>Article 3. Dotation.</strong> Un bon d'achat de 100&nbsp;€ valable à la boutique Le Lieu, rue de Metz.</p>
-      <p><strong>Article 4. Tirage au sort.</strong> Le jeu se termine le <span class="js-fin"></span>. Un gagnant est ensuite tiré au sort parmi l'ensemble des participants.</p>
-      <p><strong>Article 5. Gagnant.</strong> Le gagnant est prévenu par téléphone ou par email et reçoit son bon d'achat en boutique.</p>
+      <p><strong>Article 3. Dotation.</strong> Un bon d'achat de 100&nbsp;€, valable au choix du gagnant dans la boutique Le Lieu de la rue de Metz ou dans celle de la rue de la Pomme.</p>
+      <p><strong>Article 4. Tirage au sort.</strong> Le jeu se termine le <span class="js-fin"></span>. Un gagnant unique est ensuite tiré au sort parmi l'ensemble des participants des deux boutiques.</p>
+      <p><strong>Article 5. Gagnant.</strong> Le gagnant est prévenu par téléphone ou par email et utilise son bon d'achat dans la boutique Le Lieu de son choix.</p>
       <p><strong>Article 6. Données personnelles.</strong> Les données collectées servent à la gestion du jeu et, avec votre accord, à vous contacter par téléphone ou par email au sujet du concours et de votre sélection. Vous disposez d'un droit d'accès, de rectification, d'effacement et d'opposition, à exercer auprès de <span class="js-contact"></span>.</p>
       <p><strong>Article 7. Règlement.</strong> Le règlement complet est disponible sur demande auprès de <span class="js-org"></span>.</p>
     </details>
@@ -362,7 +385,7 @@
     // Clé d'accès Web3Forms : les réponses arrivent par email sur elio.faure@axa.fr
     extraFields: {
       access_key: "b174ce96-9bb1-4591-9e73-e256bad0a21a",
-      subject: "Nouvelle participation - Jeu concours Le Lieu (rue de Metz)",
+      subject: "Nouvelle participation - Jeu concours Le Lieu",
       from_name: "Jeu concours Le Lieu"
     },
     organisateur: "Elio Faure, conseiller AXA",
@@ -371,7 +394,6 @@
     // Le formulaire se ferme automatiquement le lendemain de cette date (heure de Paris)
     dateFinISO: "2026-11-14"
   };
-  const BOUTIQUE = "Rue de Metz";
   /* ========================================================= */
 
   const $ = (s) => document.querySelector(s);
@@ -384,6 +406,13 @@
   if (!CONFIG.endpoint) $("#test-banner").hidden = false;
 
   const form = $("#jeu");
+
+  // Présélection de la boutique via le QR code : ?b=metz ou ?b=pomme
+  const bParam = new URLSearchParams(location.search).get("b");
+  if (bParam) {
+    const r = document.querySelector('input[name="boutique"][data-key="' + bParam.toLowerCase() + '"]');
+    if (r) r.checked = true;
+  }
   const fields = {
     prenom: { el: $("#prenom"), err: $("#e-prenom") },
     nom: { el: $("#nom"), err: $("#e-nom") },
@@ -443,6 +472,10 @@
     $("#e-contact").textContent = contact.checked ? "" : "Cochez cette case pour participer.";
     if (!contact.checked) fail(contact);
 
+    const shop = form.querySelector('input[name="boutique"]:checked');
+    $("#e-boutique").textContent = shop ? "" : "Choisissez une boutique.";
+    if (!shop && !first) first = form.querySelector('input[name="boutique"]');
+
     if (first) first.focus();
     return !first;
   }
@@ -464,13 +497,14 @@
       email: fields.email.el.value.trim(),
       profession: fields.profession.el.value.trim(),
       interet_bilan: $("#interet").value,
-      boutique: BOUTIQUE,
+      boutique: form.querySelector('input[name="boutique"]:checked').value,
+      subject: "Nouvelle participation - Jeu concours Le Lieu (" + form.querySelector('input[name="boutique"]:checked').value + ")",
       consentement_reglement: true,
       consentement_contact: $("#c-contact").checked,
       texte_consentement_contact: consentText("#txt-contact"),
       horodatage: new Date().toISOString(),
       page: location.href,
-      version_formulaire: "v3-rue-de-metz"
+      version_formulaire: "v5-gagnant-unique"
     });
 
     const btn = $("#envoyer");
